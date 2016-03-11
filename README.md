@@ -26,7 +26,7 @@ Será criado um novo arquivo com todas as informações e na saída padrão apar
 ## Como medir o desempenho
 
 O tempo mostrado mede tempo de execução de cada algoritmo diferente de ordenação e qual é o melhor para cada tipo de vetor, melhor,médio epior caso.
-Faça a média aritmética de 5 vezes, já é o suficiente para se ter um resultado considerável. 
+Faça a média aritmética de 5 vezes, já é o suficiente para se ter um resultado considerável. Mas se quiser fazer mais vezes mude o valor da constante REPETICOES.
 
 ## Como apresentar o desempenho
 
