@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
-#define TAMANHO 10000
+#define TAMANHO 70000
 #define REPETICOES 5
 
 int* gPiorCaso(int tam);   //Gera vetor para Pior caso = vetor não ordenado
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 	int tam, rep;
 	tam = TAMANHO;
 	rep = REPETICOES;
-	
+	/*
 	if(argc > 3)
 	{
 		printf("Numero demasiado grande de entradas. O limite de entradas maximo e 2 numeros, e o minimo, nenhum.\nPrograma abortado\n ");
@@ -63,6 +63,7 @@ int main(int argc, char* argv[])
 		printf("O tamanho do vetor e o numero de iteracoes serao os padroes, que corresponde respectivamente: \n");
 		printf("tamanho = %d\nrepeticoes = %d\n", TAMANHO, REPETICOES);
 	}
+	*/
 	inicializaVetorMedia();
 	
 	for (int i = 0; i < rep; i++) {
@@ -89,9 +90,13 @@ void tirarMedia(int rep, int tam) {
 		mediaPiorCaso[i] /= rep;
 	}
 	
+	for (i = 0; i < 5; i++){
+		puts("+----------------------------------------------------------------------------+");
+	}
+	printf("*************	MEDIA GERAL DE CADA CASO	**********\n");
 	resultados(a,mediaMelhorCaso,tam);
-	resultados(a,mediaMelhorCaso,tam);
-	resultados(a,mediaMelhorCaso,tam);
+	resultados(b,mediaMedioCaso,tam);
+	resultados(c,mediaPiorCaso,tam);
 }
 
 void inicializaVetorMedia() {
