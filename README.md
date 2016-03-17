@@ -19,13 +19,19 @@ Utilize no terminal a linha de comando: time make
 
 ## Como executar
 
-Não existe entradas além do executável: ./sorts
-Porém caso queira mudar o tamanho do vetor verifique a constante TAMANHO. Coloque valores menores que 1000000, pois a partir desse valor o programa começa a levar muito tempo.
-Será criado um novo arquivo com todas as informações e na saída padrão aparecerá o melhor tempo e qual foi o algoritmo.
+Existe 3 opções de executar o programa: com nenhuma entrada, com 1 entrada numérica de inteiro, ou com 2 entradas numéricas de inteiro.
+Se não utilizar nenhuma entrada, ele vai usar o default definido no código executavel (tamanho do vetor de 10.000) e número de repetições de 5 iterações.
+A primeira entrada, para os dois casos(com uma ou duas entradas) corresponderá ao tamanho do vetor. A segunda entrada corresponderá ao número de iterações de cada algoritmo de ordenação, para cada caso (se não colocar, sera usado o default).
+A saida será impressa no terminal. Caso deseje que ela seja inserida no arquivo, basta executar o programa, e depois inserir "> (nome do arquivo de saida)", que sera gerado o arquivo de saida.
+
+Exemplos de entradas e execuções:
+1. ./sorts : Ele fara com o tamanha do vetor e numero de repetições definidos no programa, e imprimirá no terminal.
+2. ./sorts 1000000 20 > saida.txt : ele fara as ordenações com um vetor de tamanho 10e6, com 20 repetições em cada caso, e gerara o arquivo saida.txt, com o conteúdo da saida.
+3. ./sorts 100 100 100 : ele não executará o programa. O número máximo de entradas é de 2 termos númericos.
 
 ## Como medir o desempenho
 
-O tempo mostrado mede tempo de execução de cada algoritmo diferente de ordenação e qual é o melhor para cada tipo de vetor, melhor,médio epior caso.
+O tempo mostrado mede tempo de execução de cada algoritmo diferente de ordenação e qual é o melhor para cada tipo de vetor, melhor,médio e pior caso.
 Faça a média aritmética de 5 vezes, já é o suficiente para se ter um resultado considerável. Mas se quiser fazer mais vezes mude o valor da constante REPETICOES.
 
 ## Como apresentar o desempenho

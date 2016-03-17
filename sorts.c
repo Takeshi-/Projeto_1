@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
-#define TAMANHO 1000
+#define TAMANHO 10000
 #define REPETICOES 5
 
-int* gPiorCaso();   //Gera vetor para Pior caso = vetor não ordenado
-int* gMedioCaso();  //Gera vetor para Medio caso = vetor semi-ordenado
-int* gMelhorCaso(); //Gera vetor para Melhor caso = Vetor ordenado
+int* gPiorCaso(int tam);   //Gera vetor para Pior caso = vetor não ordenado
+int* gMedioCaso(int tam);  //Gera vetor para Medio caso = vetor semi-ordenado
+int* gMelhorCaso(int tam); //Gera vetor para Melhor caso = Vetor ordenado
 
 //A ordem dos vetores esta em Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
-float mediaMelhorCaso[7];
-float mediaMedioCaso[7];
-float mediaPiorCaso[7];
+double mediaMelhorCaso[7];
+double mediaMedioCaso[7];
+double mediaPiorCaso[7];
 
 double tempo();
 
@@ -23,42 +23,75 @@ void quicksort(int *v, int inicio, int fim);
 long heapsort(int *v, int N);
 void shellsort(int *v, int n);
 void mergeSort(int *vetor, int posicaoInicio, int posicaoFim);
-void tirarMedia();
+void tirarMedia(int rep, int tam);
 
-void piorcaso(); //Executa os 7 metodos de ordenacao usando um vetor desordenado
-void mediocaso(); //Executa os 7 metodos de ordenacao usando um vetor semi-ordenado
-void melhorcaso(); //Executa os 7 metodos de ordenacao usando um vetor ordenado
-void resultados(); //recebe o caso testado e as suas respectivas informações para a exibicao dos resultados
+void piorcaso(int tam); //Executa os 7 metodos de ordenacao usando um vetor desordenado
+void mediocaso(int tam); //Executa os 7 metodos de ordenacao usando um vetor semi-ordenado
+void melhorcaso(int tam); //Executa os 7 metodos de ordenacao usando um vetor ordenado
+void resultados(char *str,double *info, int tam); //recebe o caso testado e as suas respectivas informações para a exibicao dos resultados
 void inicializaVetorMedia(); //inicializa os vetores de media
 
-int main()
+int main(int argc, char* argv[])
 {
+	int tam, rep;
+	tam = TAMANHO;
+	rep = REPETICOES;
 	
+	if(argc > 3)
+	{
+		printf("Numero demasiado grande de entradas. O limite de entradas maximo e 2 numeros, e o minimo, nenhum.\nPrograma abortado\n ");
+		return 0;
+	}
+	else if(argc <= 3 && argc > 1)
+	{
+		printf("O primeiro numero inserido sera correspondente ao tamanho do vetor: " );
+		tam = atoi(argv[1]);
+		printf("%d\n", tam);
+		if(argc == 3)
+		{
+			printf("O segundo numero sera correspondente ao numero de iteracoes: ");
+			rep = atoi(argv[2]);
+			printf("%d\n", rep);
+		}
+		else
+		{
+			printf("o numero de iteracoes sera o numero padrao do programa: %d\n", REPETICOES);
+		}
+	}	
+	else
+	{
+		printf("O tamanho do vetor e o numero de iteracoes serao os padroes, que corresponde respectivamente: \n");
+		printf("tamanho = %d\nrepeticoes = %d\n", TAMANHO, REPETICOES);
+	}
 	inicializaVetorMedia();
 	
-	for (int i = 0; i < REPETICOES; i++) {
+	for (int i = 0; i < rep; i++) {
 	
-		piorcaso();
-		mediocaso();
-		melhorcaso();
+		piorcaso(tam);
+		mediocaso(tam);
+		melhorcaso(tam);
 
 	}
 	
-	tirarMedia();
+	tirarMedia(rep, tam);
+
 	
 	return 0;
 }
 
-void tirarMedia() {
+void tirarMedia(int rep, int tam) {
 	
 	int i;
-	
+	char a[17] = {"Media Melhor Caso"}, b[16] = {"Media Caso Medio"}, c[15] = {"Media Pior Caso"};
 	for (i = 0; i < 7; i++) {
-		mediaMedioCaso[i] /= REPETICOES;
-		mediaMelhorCaso[i] /= REPETICOES;
-		mediaPiorCaso[i] /= REPETICOES;
+		mediaMedioCaso[i] /= rep;
+		mediaMelhorCaso[i] /= rep;
+		mediaPiorCaso[i] /= rep;
 	}
 	
+	resultados(a,mediaMelhorCaso,tam);
+	resultados(a,mediaMelhorCaso,tam);
+	resultados(a,mediaMelhorCaso,tam);
 }
 
 void inicializaVetorMedia() {
@@ -73,43 +106,43 @@ void inicializaVetorMedia() {
 	
 }
 
-int* gPiorCaso()  //Gera vetor para Pior caso = vetor não ordenado
+int* gPiorCaso(int tam)  //Gera vetor para Pior caso = vetor não ordenado
 {
     int i, *vetor;
-    vetor = (int*) malloc(sizeof(int) * TAMANHO);
+    vetor = (int*) malloc(sizeof(int) * tam);
 
-    for(i=TAMANHO; i>0; i--)
-        vetor[TAMANHO-i] = i;
+    for(i=tam; i>0; i--)
+        vetor[tam-i] = i;
 
     return vetor;
 }
 
-int* gMedioCaso() //Gera vetor para Medio caso = vetor semi-ordenado
+int* gMedioCaso(int tam) //Gera vetor para Medio caso = vetor semi-ordenado
 {
     /*
     *   Preenche o vetor de maneira ordenada até a metade
     *   e de maneira desordenada da metade do vetor até o final.
     */
 
-    int i, j, meioTamanho=TAMANHO/2, *vetor;
-    vetor = (int*) malloc(sizeof(int) * TAMANHO);
+    int i, j, meioTamanho=tam/2, *vetor;
+    vetor = (int*) malloc(sizeof(int) * tam);
 
     for(i=0; i<meioTamanho; i++) //Preenche ordenado até a metade
         vetor[i] = i;
 
-    for(i=TAMANHO-1,j=meioTamanho; i>=meioTamanho; i--,j++) //Preenche desordenado da metade até o fim
+    for(i=tam-1,j=meioTamanho; i>=meioTamanho; i--,j++) //Preenche desordenado da metade até o fim
     {
         vetor[i] = j;
     }
     return vetor;
 }
 
-int* gMelhorCaso() //Gera vetor para Melhor caso = Vetor ordenado
+int* gMelhorCaso(int tam) //Gera vetor para Melhor caso = Vetor ordenado
 {
     int i, *vetor;
-    vetor = (int*) malloc(sizeof(int) * TAMANHO);
+    vetor = (int*) malloc(sizeof(int) * tam);
 
-    for(i=0; i<TAMANHO; i++)
+    for(i=0; i<tam; i++)
         vetor[i] = i;
 
     return vetor;
@@ -320,7 +353,7 @@ void shellsort(int *v, int n)
 }
 
 
-void piorcaso()
+void piorcaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
@@ -328,52 +361,52 @@ void piorcaso()
 
     processo = tempo();
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    bolha(vetor,TAMANHO);
+    bolha(vetor,tam);
     info[0]=tempo()-inicial;
     free(vetor);
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    selecao(vetor,TAMANHO);
+    selecao(vetor,tam);
     info[1]=tempo()-inicial;
     free(vetor);
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    insercao(vetor,TAMANHO);
+    insercao(vetor,tam);
     info[2]=tempo()-inicial;
     free(vetor);
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    quicksort(vetor,0,TAMANHO-1);
+    quicksort(vetor,0,tam-1);
     info[3]=tempo()-inicial;
     free(vetor);
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    heapsort(vetor,TAMANHO);
+    heapsort(vetor,tam);
     info[4]=tempo()-inicial;
     free(vetor);
 
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    shellsort(vetor,TAMANHO);
+    shellsort(vetor,tam);
     info[5]=tempo()-inicial;
     free(vetor);
     
-    vetor = gPiorCaso();
+    vetor = gPiorCaso(tam);
 
     inicial = tempo();
-    mergeSort(vetor,0, TAMANHO -1);
+    mergeSort(vetor,0, tam -1);
     info[6]=tempo()-inicial;
     free(vetor);
 
@@ -381,11 +414,11 @@ void piorcaso()
 		mediaPiorCaso[i] += info[i];
 	}
 
-    resultados(caso,info);
+    resultados(caso,info, tam);
     printf("\nO processo de teste para o vetor desordenado(%s) demorou: %fs\n\n",caso,tempo()-processo);
 }
 
-void mediocaso()
+void mediocaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
@@ -393,52 +426,52 @@ void mediocaso()
 
     processo = tempo();
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    bolha(vetor,TAMANHO);
+    bolha(vetor,tam);
     info[0]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    selecao(vetor,TAMANHO);
+    selecao(vetor,tam);
     info[1]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    insercao(vetor,TAMANHO);
+    insercao(vetor,tam);
     info[2]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    quicksort(vetor,0,TAMANHO-1);
+    quicksort(vetor,0,tam-1);
     info[3]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    heapsort(vetor,TAMANHO);
+    heapsort(vetor,tam);
     info[4]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    shellsort(vetor,TAMANHO);
+    shellsort(vetor,tam);
     info[5]=tempo()-inicial;
     free(vetor);
     
-    vetor = gMedioCaso();
+    vetor = gMedioCaso(tam);
 
     inicial = tempo();
-    mergeSort(vetor,0, TAMANHO -1);
+    mergeSort(vetor,0, tam -1);
     info[6]=tempo()-inicial;
     free(vetor);
 
@@ -446,11 +479,11 @@ void mediocaso()
 		mediaMedioCaso[i] += info[i];
 	}
 
-    resultados(caso,info);
+    resultados(caso,info, tam);
     printf("\nO processo de teste para o vetor semi-ordenado(%s) demorou: %fs\n\n",caso,tempo()-processo);
 }
 
-void melhorcaso()
+void melhorcaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
@@ -458,52 +491,52 @@ void melhorcaso()
 
     processo = tempo();
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    bolha(vetor,TAMANHO);
+    bolha(vetor,tam);
     info[0]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    selecao(vetor,TAMANHO);
+    selecao(vetor,tam);
     info[1]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    insercao(vetor,TAMANHO);
+    insercao(vetor,tam);
     info[2]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    quicksort(vetor,0,TAMANHO-1);
+    quicksort(vetor,0,tam-1);
     info[3]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    heapsort(vetor,TAMANHO);
+    heapsort(vetor,tam);
     info[4]=tempo()-inicial;
     free(vetor);
 
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    shellsort(vetor,TAMANHO);
+    shellsort(vetor,tam);
     info[5]=tempo()-inicial;
     free(vetor);
     
-    vetor = gMelhorCaso();
+    vetor = gMelhorCaso(tam);
 
     inicial = tempo();
-    mergeSort(vetor,0, TAMANHO -1);
+    mergeSort(vetor,0, tam -1);
     info[6]=tempo()-inicial;
     free(vetor);
 
@@ -511,17 +544,17 @@ void melhorcaso()
 		mediaMelhorCaso[i] += info[i];
 	}
 
-    resultados(caso,info);
+    resultados(caso,info, tam);
     printf("\nO processo de teste para o vetor ordenado(%s) demorou: %fs\n\n",caso,tempo()-processo);
 }
 
-void resultados(char *str,double *info)
+void resultados(char *str,double *info, int tam)
 {
     int i,maior,menor;
     char metodos[7][20] = {"Bubblesort", "Selection Sort", "Insertion Sort", "Quicksort", "Heapsort", "Shellsort", "Mergesort"};
 
     puts("+----------------------------------------------------------------------------+");
-    printf("\tResultados do (%s) com vetor de %d posicoes:\n",str,TAMANHO);
+    printf("\tResultados do (%s) com vetor de %d posicoes:\n",str,tam);
     for (i=0; i<7; i++)
         printf("\t%s \t--> %fs\n",metodos[i],info[i]);
 
