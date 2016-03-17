@@ -14,8 +14,8 @@ O código sorts.c está no repositório do GitHub: https://github.com/Takeshi-/P
 
 ## Como compilar/instalar
 
-Basta criar um novo arquivo sorts.c a partir do código fonte e baixar o Makefile na mesma pasta que o código se encontra.
-Utilize no terminal a linha de comando: _time make_
+Basta criar um novo arquivo sorts.c a partir do código fonte e utilizar o Makefile.
+Utilize no terminal a linha de comando: time make
 
 ## Como executar
 
