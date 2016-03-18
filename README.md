@@ -32,7 +32,7 @@ O desempenho será analizado atraves das médias dos melhores tempos de cada cas
 
 O desempenho deve ser observado no final da execução com as médias de cada algoritmo de ordenação.
 A margem de erro pode ser calculada com o desvio padrão após a execução, porém isso é da parte da pessoa que está utilizando o código, pois o desvio padrão não é calculado.
-Caso queira uma margem de erro mais correta, basta aumentar o número de vezes que o código será executado.
+Caso queira uma margem de erro mais correta, basta aumentar o número de vezes que o código será executado ou aumentar o tamanho do vetor.
 
 ## Medições base
 
