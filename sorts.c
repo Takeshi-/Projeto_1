@@ -65,8 +65,8 @@ int main(int argc, char* argv[])
 	}
 	*/
 	inicializaVetorMedia();
-	
-	for (int i = 0; i < rep; i++) {
+	int i;
+	for (i = 0; i < rep; i++) {
 	
 		piorcaso(tam);
 		mediocaso(tam);
@@ -83,7 +83,7 @@ int main(int argc, char* argv[])
 void tirarMedia(int rep, int tam) {
 	
 	int i;
-	char a[17] = {"Media Melhor Caso"}, b[16] = {"Media Caso Medio"}, c[15] = {"Media Pior Caso"};
+	char a[18] = {"Media Melhor Caso"}, b[17] = {"Media Caso Medio"}, c[16] = {"Media Pior Caso"};
 	for (i = 0; i < 7; i++) {
 		mediaMedioCaso[i] /= rep;
 		mediaMelhorCaso[i] /= rep;
@@ -362,7 +362,7 @@ void piorcaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
-    char caso[10] = {"PIOR CASO"};
+    char caso[11] = {"PIOR CASO"};
 
     processo = tempo();
 
@@ -427,7 +427,7 @@ void mediocaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
-    char caso[10] = {"CASO MEDIO"};
+    char caso[11] = {"CASO MEDIO"};
 
     processo = tempo();
 
@@ -492,7 +492,7 @@ void melhorcaso(int tam)
 {
     int *vetor, i;
     double processo,inicial,info[7]; //Bolha, Seleção, Inserção, Quick, Heap, Shell, Merge
-    char caso[11] = {"MELHOR CASO"};
+    char caso[12] = {"MELHOR CASO"};
 
     processo = tempo();
 

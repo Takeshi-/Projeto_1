@@ -1,0 +1,321 @@
++----------------------------------------------------------------------------+
+	Resultados do (PIOR CASO) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.429892s
+	Selection Sort 	--> 0.199800s
+	Insertion Sort 	--> 0.253265s
+	Quicksort 	--> 0.000573s
+	Heapsort 	--> 0.001597s
+	Shellsort 	--> 0.033553s
+	Mergesort 	--> 0.002153s
+
+Melhor metodo:
+	Quicksort 	-> 0.000573s
+
+Pior metodo:
+	Bubblesort 	-> 0.429892s
+
+O processo de teste para o vetor desordenado(PIOR CASO) demorou: 0.921168s
+
++----------------------------------------------------------------------------+
+	Resultados do (CASO MEDIO>G#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249294s
+	Selection Sort 	--> 0.193459s
+	Insertion Sort 	--> 0.063213s
+	Quicksort 	--> 0.000576s
+	Heapsort 	--> 0.001642s
+	Shellsort 	--> 0.008592s
+	Mergesort 	--> 0.002166s
+
+Melhor metodo:
+	Quicksort 	-> 0.000576s
+
+Pior metodo:
+	Bubblesort 	-> 0.249294s
+
+O processo de teste para o vetor semi-ordenado(CASO MEDIO>G#) demorou: 0.519289s
+
++----------------------------------------------------------------------------+
+	Resultados do (MELHOR CASOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189517s
+	Selection Sort 	--> 0.191259s
+	Insertion Sort 	--> 0.000076s
+	Quicksort 	--> 0.000542s
+	Heapsort 	--> 0.001680s
+	Shellsort 	--> 0.000403s
+	Mergesort 	--> 0.002202s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000076s
+
+Pior metodo:
+	Selection Sort 	-> 0.191259s
+
+O processo de teste para o vetor ordenado(MELHOR CASOG#) demorou: 0.385997s
+
++----------------------------------------------------------------------------+
+	Resultados do (PIOR CASO) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.428431s
+	Selection Sort 	--> 0.199773s
+	Insertion Sort 	--> 0.253236s
+	Quicksort 	--> 0.000570s
+	Heapsort 	--> 0.001596s
+	Shellsort 	--> 0.033538s
+	Mergesort 	--> 0.002126s
+
+Melhor metodo:
+	Quicksort 	-> 0.000570s
+
+Pior metodo:
+	Bubblesort 	-> 0.428431s
+
+O processo de teste para o vetor desordenado(PIOR CASO) demorou: 0.919495s
+
++----------------------------------------------------------------------------+
+	Resultados do (CASO MEDIOOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249246s
+	Selection Sort 	--> 0.193508s
+	Insertion Sort 	--> 0.063144s
+	Quicksort 	--> 0.000548s
+	Heapsort 	--> 0.001667s
+	Shellsort 	--> 0.008599s
+	Mergesort 	--> 0.002160s
+
+Melhor metodo:
+	Quicksort 	-> 0.000548s
+
+Pior metodo:
+	Bubblesort 	-> 0.249246s
+
+O processo de teste para o vetor semi-ordenado(CASO MEDIOOG#) demorou: 0.519224s
+
++----------------------------------------------------------------------------+
+	Resultados do (MELHOR CASOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189452s
+	Selection Sort 	--> 0.191185s
+	Insertion Sort 	--> 0.000076s
+	Quicksort 	--> 0.000565s
+	Heapsort 	--> 0.001665s
+	Shellsort 	--> 0.000409s
+	Mergesort 	--> 0.002199s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000076s
+
+Pior metodo:
+	Selection Sort 	-> 0.191185s
+
+O processo de teste para o vetor ordenado(MELHOR CASOG#) demorou: 0.385875s
+
++----------------------------------------------------------------------------+
+	Resultados do (PIOR CASO) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.428402s
+	Selection Sort 	--> 0.199800s
+	Insertion Sort 	--> 0.253250s
+	Quicksort 	--> 0.000583s
+	Heapsort 	--> 0.001602s
+	Shellsort 	--> 0.033530s
+	Mergesort 	--> 0.002124s
+
+Melhor metodo:
+	Quicksort 	-> 0.000583s
+
+Pior metodo:
+	Bubblesort 	-> 0.428402s
+
+O processo de teste para o vetor desordenado(PIOR CASO) demorou: 0.919523s
+
++----------------------------------------------------------------------------+
+	Resultados do (CASO MEDIOOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249375s
+	Selection Sort 	--> 0.193403s
+	Insertion Sort 	--> 0.063173s
+	Quicksort 	--> 0.000568s
+	Heapsort 	--> 0.001670s
+	Shellsort 	--> 0.008600s
+	Mergesort 	--> 0.002161s
+
+Melhor metodo:
+	Quicksort 	-> 0.000568s
+
+Pior metodo:
+	Bubblesort 	-> 0.249375s
+
+O processo de teste para o vetor semi-ordenado(CASO MEDIOOG#) demorou: 0.519295s
+
++----------------------------------------------------------------------------+
+	Resultados do (MELHOR CASOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189465s
+	Selection Sort 	--> 0.191220s
+	Insertion Sort 	--> 0.000075s
+	Quicksort 	--> 0.000536s
+	Heapsort 	--> 0.001673s
+	Shellsort 	--> 0.000404s
+	Mergesort 	--> 0.002206s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000075s
+
+Pior metodo:
+	Selection Sort 	-> 0.191220s
+
+O processo de teste para o vetor ordenado(MELHOR CASOG#) demorou: 0.385899s
+
++----------------------------------------------------------------------------+
+	Resultados do (PIOR CASO) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.428422s
+	Selection Sort 	--> 0.199748s
+	Insertion Sort 	--> 0.253243s
+	Quicksort 	--> 0.000573s
+	Heapsort 	--> 0.001597s
+	Shellsort 	--> 0.033544s
+	Mergesort 	--> 0.002125s
+
+Melhor metodo:
+	Quicksort 	-> 0.000573s
+
+Pior metodo:
+	Bubblesort 	-> 0.428422s
+
+O processo de teste para o vetor desordenado(PIOR CASO) demorou: 0.919469s
+
++----------------------------------------------------------------------------+
+	Resultados do (CASO MEDIOOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249308s
+	Selection Sort 	--> 0.193412s
+	Insertion Sort 	--> 0.063134s
+	Quicksort 	--> 0.000557s
+	Heapsort 	--> 0.001664s
+	Shellsort 	--> 0.008588s
+	Mergesort 	--> 0.002164s
+
+Melhor metodo:
+	Quicksort 	-> 0.000557s
+
+Pior metodo:
+	Bubblesort 	-> 0.249308s
+
+O processo de teste para o vetor semi-ordenado(CASO MEDIOOG#) demorou: 0.519178s
+
++----------------------------------------------------------------------------+
+	Resultados do (MELHOR CASOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189464s
+	Selection Sort 	--> 0.191252s
+	Insertion Sort 	--> 0.000076s
+	Quicksort 	--> 0.000565s
+	Heapsort 	--> 0.001669s
+	Shellsort 	--> 0.000404s
+	Mergesort 	--> 0.002202s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000076s
+
+Pior metodo:
+	Selection Sort 	-> 0.191252s
+
+O processo de teste para o vetor ordenado(MELHOR CASOG#) demorou: 0.385951s
+
++----------------------------------------------------------------------------+
+	Resultados do (PIOR CASO) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.428414s
+	Selection Sort 	--> 0.199798s
+	Insertion Sort 	--> 0.253276s
+	Quicksort 	--> 0.000567s
+	Heapsort 	--> 0.001605s
+	Shellsort 	--> 0.033534s
+	Mergesort 	--> 0.002123s
+
+Melhor metodo:
+	Quicksort 	-> 0.000567s
+
+Pior metodo:
+	Bubblesort 	-> 0.428414s
+
+O processo de teste para o vetor desordenado(PIOR CASO) demorou: 0.919535s
+
++----------------------------------------------------------------------------+
+	Resultados do (CASO MEDIOOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249251s
+	Selection Sort 	--> 0.193421s
+	Insertion Sort 	--> 0.063167s
+	Quicksort 	--> 0.000549s
+	Heapsort 	--> 0.001675s
+	Shellsort 	--> 0.008612s
+	Mergesort 	--> 0.002161s
+
+Melhor metodo:
+	Quicksort 	-> 0.000549s
+
+Pior metodo:
+	Bubblesort 	-> 0.249251s
+
+O processo de teste para o vetor semi-ordenado(CASO MEDIOOG#) demorou: 0.519178s
+
++----------------------------------------------------------------------------+
+	Resultados do (MELHOR CASOG#) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189484s
+	Selection Sort 	--> 0.191191s
+	Insertion Sort 	--> 0.000076s
+	Quicksort 	--> 0.000559s
+	Heapsort 	--> 0.001663s
+	Shellsort 	--> 0.000413s
+	Mergesort 	--> 0.002211s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000076s
+
+Pior metodo:
+	Selection Sort 	-> 0.191191s
+
+O processo de teste para o vetor ordenado(MELHOR CASOG#) demorou: 0.385925s
+
++----------------------------------------------------------------------------+
++----------------------------------------------------------------------------+
++----------------------------------------------------------------------------+
++----------------------------------------------------------------------------+
++----------------------------------------------------------------------------+
+*************	MEDIA GERAL DE CADA CASO	**********
++----------------------------------------------------------------------------+
+	Resultados do (Media Melhor Caso) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.189476s
+	Selection Sort 	--> 0.191221s
+	Insertion Sort 	--> 0.000076s
+	Quicksort 	--> 0.000553s
+	Heapsort 	--> 0.001670s
+	Shellsort 	--> 0.000407s
+	Mergesort 	--> 0.002204s
+
+Melhor metodo:
+	Insertion Sort 	-> 0.000076s
+
+Pior metodo:
+	Selection Sort 	-> 0.191221s
++----------------------------------------------------------------------------+
+	Resultados do (Media Caso Medio) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.249295s
+	Selection Sort 	--> 0.193441s
+	Insertion Sort 	--> 0.063166s
+	Quicksort 	--> 0.000560s
+	Heapsort 	--> 0.001664s
+	Shellsort 	--> 0.008598s
+	Mergesort 	--> 0.002162s
+
+Melhor metodo:
+	Quicksort 	-> 0.000560s
+
+Pior metodo:
+	Bubblesort 	-> 0.249295s
++----------------------------------------------------------------------------+
+	Resultados do (Media Pior Caso) com vetor de 10000 posicoes:
+	Bubblesort 	--> 0.428712s
+	Selection Sort 	--> 0.199784s
+	Insertion Sort 	--> 0.253254s
+	Quicksort 	--> 0.000573s
+	Heapsort 	--> 0.001599s
+	Shellsort 	--> 0.033540s
+	Mergesort 	--> 0.002130s
+
+Melhor metodo:
+	Quicksort 	-> 0.000573s
+
+Pior metodo:
+	Bubblesort 	-> 0.428712s
